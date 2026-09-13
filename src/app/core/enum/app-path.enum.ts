@@ -1,3 +1,3 @@
 export enum AppPath {
-  EXAMPLE = 'example',
+  DASHBOARD = '',
 }

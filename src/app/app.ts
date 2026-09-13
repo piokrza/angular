@@ -6,7 +6,6 @@ const imports = [RouterOutlet];
 @Component({
   selector: 'app-root',
   template: `<router-outlet />`,
-  styleUrl: './app.css',
   imports,
 })
 export class App {

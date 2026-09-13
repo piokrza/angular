@@ -6,7 +6,7 @@ module.exports = tseslint.config(
   {
     files: ['**/*.ts'],
     plugins: {
-      import: require('eslint-plugin-import'),
+      import: require('eslint-plugin-import-x'),
     },
     extends: [eslint.configs.recommended, ...tseslint.configs.recommended, ...tseslint.configs.stylistic, ...angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,

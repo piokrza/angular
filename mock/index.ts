@@ -8,7 +8,7 @@ import express from 'express';
 const app = express();
 
 app
-  .use((req, res, next) => setTimeout(() => next(), Math.ceil(Math.random() * 2_500)))
+  .use((_req, _res, next) => setTimeout(() => next(), Math.ceil(Math.random() * 2_500)))
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json());
 
