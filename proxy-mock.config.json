@@ -1,0 +1,9 @@
+[
+  {
+    "context": ["/example"],
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "target": "http://localhost:3000"
+  }
+]

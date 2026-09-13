@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "../dist-demo/mock"
+  },
+  "extends": "../tsconfig.json"
+}

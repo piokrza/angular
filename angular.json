@@ -63,6 +63,16 @@
           },
           "defaultConfiguration": "development"
         },
+        "serve-mock": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "mock": {
+              "buildTarget": "angular:build:development",
+              "proxyConfig": "proxy-mock.config.json"
+            }
+          },
+          "defaultConfiguration": "mock"
+        },
         "test": {
           "builder": "@angular/build:unit-test"
         },
