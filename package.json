@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prepare": "husky",
+    "lint": "ng lint",
+    "clear": "rm -rf .angular dist node_modules package-lock.json"
   },
   "private": true,
   "packageManager": "npm@11.16.0",
@@ -24,12 +27,26 @@
     "@angular/build": "^22.0.5",
     "@angular/cli": "^22.0.5",
     "@angular/compiler-cli": "^22.0.0",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4.1.12",
+    "angular-eslint": "22.5.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
     "jsdom": "^28.0.0",
+    "lint-staged": "^17.5.1",
     "postcss": "^8.5.3",
-    "prettier": "^3.8.1",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4.1.12",
     "typescript": "~6.0.2",
+    "typescript-eslint": "8.69.0",
     "vitest": "^4.0.8"
+  },
+  "lint-staged": {
+    "*.{ts,html}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{scss,json}": "prettier --write"
   }
 }
