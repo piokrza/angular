@@ -6,8 +6,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
 
 import { LinksComponent } from '@ng-ui/layout/component/links';
+import { ThemeTogglerComponent } from '@ng-ui/layout/component/theme-toggler';
 
-const imports = [MatButtonModule, RouterOutlet, MatSidenavModule, LinksComponent, MatToolbarModule, MatIcon];
+const imports = [MatButtonModule, RouterOutlet, MatSidenavModule, LinksComponent, MatToolbarModule, MatIcon, ThemeTogglerComponent];
 
 @Component({
   selector: 'ng-layout',
@@ -18,14 +19,14 @@ const imports = [MatButtonModule, RouterOutlet, MatSidenavModule, LinksComponent
       </button>
       <span>Angular</span>
       <span class="flex-auto"></span>
-      <button matIconButton>
-        <mat-icon>menu</mat-icon>
-      </button>
+      <ng-theme-toggler />
     </mat-toolbar>
 
     <mat-drawer-container class="grow">
       <mat-drawer opened mode="side">
-        <ng-links />
+        <div class="border-r-2 h-full">
+          <ng-links />
+        </div>
       </mat-drawer>
       <mat-drawer-content>
         <main class="h-full p-4">
