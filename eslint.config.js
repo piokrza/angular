@@ -17,7 +17,7 @@ module.exports = tseslint.config(
         {
           'alphabetize': { order: 'asc' },
           'groups': [['builtin'], ['sibling', 'parent'], 'external', 'internal', 'index', 'object'],
-          'pathGroups': [{ pattern: '@ng/**', group: 'internal', position: 'after' }],
+          'pathGroups': [{ pattern: '@ng-*/**', group: 'internal', position: 'after' }],
           'pathGroupsExcludedImportTypes': ['internal'],
           'newlines-between': 'always',
           'warnOnUnassignedImports': true,
