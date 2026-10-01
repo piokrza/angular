@@ -1,15 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
-const imports = [MatButtonModule, MatInputModule, ReactiveFormsModule];
+const imports = [MatButtonModule, MatInputModule, ReactiveFormsModule, MatSelectModule];
 
 @Component({
   selector: 'app-reactive-forms',
   templateUrl: './reactive-forms.component.html',
-  styleUrls: ['../../common-page.scss', '../../common-form.scss', './reactive-forms.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports,
 })
 export class ReactiveFormsComponent {
