@@ -10,7 +10,7 @@ export const routes: Routes = [
       { path: '', redirectTo: AppPath.FORMS, pathMatch: 'full' },
       {
         path: AppPath.FORMS,
-        loadComponent: async () => (await import('@ng-feature/forms')).Forms,
+        loadChildren: async () => (await import('@ng-feature/forms/route')).FormRoutes,
       },
     ],
   },
