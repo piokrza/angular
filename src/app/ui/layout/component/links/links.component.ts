@@ -1,18 +1,24 @@
 import { TitleCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppPath } from '@ng-core/enum';
 
-const imports = [MatListModule, RouterLink, TitleCasePipe];
+const imports = [MatListModule, RouterModule, TitleCasePipe];
 
 @Component({
   selector: 'ng-links',
   template: `
     <mat-nav-list>
       @for (link of fragments; track link) {
-        <a mat-list-item [routerLink]="link" (click)="activeLink.set(link)" [activated]="activeLink() === link">
+        <a
+          mat-list-item
+          routerLinkActive
+          #routerLinkActive="routerLinkActive"
+          [routerLink]="link"
+          [activated]="routerLinkActive.isActive"
+          [routerLinkActiveOptions]="{ exact: false }">
           {{ link | titlecase }}
         </a>
       }
@@ -22,5 +28,4 @@ const imports = [MatListModule, RouterLink, TitleCasePipe];
 })
 export class LinksComponent {
   readonly fragments = [AppPath.FORMS];
-  readonly activeLink = signal<string | null>(null);
 }
